@@ -29,7 +29,7 @@ public class UserService {
     }
 
     @PostMapping("/post")
-    public ResponseEntity<?> postResponseEntity(@RequestBody @Valid User request, BindingResult bindingResult){
+    public ResponseEntity<?> postResponseEntity(@RequestBody @Valid User request, BindingResult bindingResult) throws Exception{
         if (bindingResult.hasErrors()) {
             List<ResponseError> responseErrors = new ArrayList<>();
             for (FieldError fieldError : bindingResult.getFieldErrors()){
